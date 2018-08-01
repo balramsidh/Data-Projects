@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1520324970275.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "792687913",
+    "id" : "6A9BB1C2",
+    "lastKnownWriteTime" : 1520373757,
+    "last_content_update" : 1520373757579,
+    "path" : "~/Desktop/Learnings/Data Camp/String manipulation/Intro to Stringr.R",
+    "project_path" : "Intro to Stringr.R",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

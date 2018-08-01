@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1519241813919.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3426960769",
+    "id" : "CBE2A0EC",
+    "lastKnownWriteTime" : 1519938604,
+    "last_content_update" : 1519938604,
+    "path" : "~/Desktop/Learnings/Data Camp/Visualization using ggplot2/part-1.R",
+    "project_path" : "part-1.R",
+    "properties" : {
+        "cursorPosition" : "174,0",
+        "scrollLine" : "159",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

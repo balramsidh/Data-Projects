@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1520373773507.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2444014335",
+    "id" : "A7217453",
+    "lastKnownWriteTime" : 1520408442,
+    "last_content_update" : 1520408448450,
+    "path" : "~/Desktop/Learnings/Data Camp/String manipulation/Regular expressions.R",
+    "project_path" : "Regular expressions.R",
+    "properties" : {
+        "cursorPosition" : "17,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

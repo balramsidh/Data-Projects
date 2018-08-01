@@ -1,0 +1,45 @@
+# MSIS 521- individual project 
+# panasonic 
+# Balram Sidh 
+
+# laoding required packages 
+packages = c("tidyverse","ggplot2")
+
+package.check <- lapply(packages, FUN = function(pkg) {
+  if (!require(pkg, character.only = TRUE)) {
+    install.packages(pkg, dependencies = TRUE)
+    library(pkg, character.only = TRUE)
+  }
+})
+
+
+# reading the input file 
+df.all <- read.csv("IA1-PanasonicLCDTV.csv",skip=1)
+
+
+# data manipulations 
+df.all$Selling.Price <- as.integer(gsub('[\\$,]','',as.character(df.all$Selling.Price)))
+
+df.manufacturer <- as.data.frame(model.matrix(~Manufacturer -1, df.all))
+
+category_prices <- df.all %>% 
+  group_by(Screen.Size,Motion.Rate,Pixel) %>%
+  summarise(avg.price = mean(Selling.Price))
+
+
+df.combinded <- df.all %>%
+left_join(category_prices, by = c("Screen.Size","Motion.Rate","Pixel")) %>%
+  mutate(price_diff = Selling.Price - avg.price) 
+
+
+df.regression <- df.manufacturer[,2:8] %>%
+  cbind.data.frame(df.combinded[,5:30]) %>% 
+  select (-Selling.Price,-avg.price)
+
+
+attach(df.regression)
+##### Regression 
+
+model <- lm(Yearly.units.sold.in.US ~ ., data=df.regression)
+
+summary(model)

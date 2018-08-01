@@ -1,0 +1,45 @@
+library(tidyverse)
+df <- tibble(
+  x = 1:3,
+  y = c("a", "balram", "ab")
+)
+
+df <- df %>%
+  transform(y = strsplit(y, ",")) %>%
+  unnest(y)
+
+??unnest
+
+
+?count()
+
+
+x <- 1:50
+case_when(
+  x %% 35 == 0 ~ "fizz buzz",
+  x %% 5 == 0 ~ "fizz",
+  x %% 7 == 0 ~ "buzz",
+  TRUE ~ as.character(x)
+)
+
+?row_number()
+
+x <- c(5, 1, 3, 2, 2, 2)
+
+data_frame(a = c("a", "b", "C")) %>% mutate(row_number(a))
+
+data_frame(a = c("a", "b", "C")) %>% mutate(dplyr::row_number(a))
+
+df %>%
+  mutate(rnk = dplyr::row_number(y))
+
+row_number(df$x,df$y)
+
+min_rank(x)
+dense_rank(x)
+percent_rank(x)
+
+cume_dist(x)
+
+ntile(x, 2)
+ntile(runif(100), 10)

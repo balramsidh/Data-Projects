@@ -1,0 +1,17 @@
+### McGill billboard dataset 
+
+packages = c("tidyverse","ggplot2")
+
+package.check <- for (pkg in packages) {
+  if (!require(pkg, character.only = T))  {
+    install.packages(pkg, dependencies = T)
+    library(pkg, character.only = T)
+  }
+}
+
+
+
+x <- as.character(iris$Species)
+
+
+

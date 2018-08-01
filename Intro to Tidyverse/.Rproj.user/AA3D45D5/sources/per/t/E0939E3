@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1517618241546.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1288424384",
+    "id" : "E0939E3",
+    "lastKnownWriteTime" : 1520659074,
+    "last_content_update" : 1520659074478,
+    "path" : "~/Desktop/Learnings/Data Camp/Intro to Tidyverse/Exercises.R",
+    "project_path" : "Exercises.R",
+    "properties" : {
+        "cursorPosition" : "148,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

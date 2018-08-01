@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1518287638930.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A673068A",
+    "lastKnownWriteTime" : 6,
+    "last_content_update" : 1518287638930,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "614BAE42",
+        "caption" : "iris.tidy",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=iris.tidy&cache_key=614BAE42",
+        "displayedObservations" : "750",
+        "environment" : "",
+        "object" : "iris.tidy",
+        "preview" : "0",
+        "totalObservations" : "750",
+        "variables" : "4"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

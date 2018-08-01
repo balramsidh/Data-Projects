@@ -1,0 +1,6 @@
+
+ggplot(data=subset(tool_count,!is.na(work_tools)), aes(x = reorder(work_tools,n), y= n)) + 
+  geom_bar(stat = "identity", fill="#5F9EA0") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(x= "Tools", y = "Count")

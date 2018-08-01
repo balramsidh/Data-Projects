@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1520458689182.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1715488082",
+    "id" : "E8124120",
+    "lastKnownWriteTime" : 1520459374,
+    "last_content_update" : 1520459374884,
+    "path" : "~/Desktop/Learnings/Data Camp/String manipulation/case.R",
+    "project_path" : "case.R",
+    "properties" : {
+        "cursorPosition" : "55,23",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

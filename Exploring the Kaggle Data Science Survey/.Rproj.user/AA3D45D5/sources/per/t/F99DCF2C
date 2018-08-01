@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1522303027846.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2230961169",
+    "id" : "F99DCF2C",
+    "lastKnownWriteTime" : 1522305114,
+    "last_content_update" : 1522305114069,
+    "path" : "~/Desktop/Learnings/Data Camp/Exploring the Kaggle Data Science Survey/R markdown.Rmd",
+    "project_path" : "R markdown.Rmd",
+    "properties" : {
+        "cursorPosition" : "81,19",
+        "scrollLine" : "69",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

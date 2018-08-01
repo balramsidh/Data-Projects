@@ -1,0 +1,136 @@
+## 1. Welcome to the world of data science
+<p>Throughout the world of data science, there are many languages and tools that can be used to complete a given task. While you are often able to use whichever tool you prefer, it is often important for analysts to work with similar platforms so that they can share their code with one another. Learning what professionals in the data science industry use while at work can help you gain a better understanding of things that you may be asked to do in the future. </p>
+<p>In this project, we are going to find out what tools and languages professionals use in their day-to-day work. Our data comes from the <a href="https://www.kaggle.com/kaggle/kaggle-survey-2017?utm_medium=partner&utm_source=datacamp.com&utm_campaign=ml+survey+case+study">Kaggle Data Science Survey</a> which includes responses from over 10,000 people that write code to analyze data in their daily work. </p>
+
+```{r message=F}
+# Loading necessary packages
+library(tidyverse)
+
+# Loading the data
+responses <- read_csv("datasets/kagglesurvey.csv")
+
+```
+
+```{r}
+head(responses)
+```
+## 2. Using multiple tools
+<p>Now that we've loaded in the survey results, we want to focus on the tools and languages that the survey respondents use at work. </p>
+
+```{r}
+# Printing the first respondents' tools and languages
+responses$WorkToolsSelect[1]
+
+# Creating a new data frame called tools
+tools <- responses
+
+# Adding a new column to tools which splits the WorkToolsSelect column at the commas and unnests the new column
+tools <- tools %>%
+mutate( work_tools = strsplit(WorkToolsSelect,",")) %>%
+unnest(work_tools)
+
+# Viewing the first few rows of tools
+head(tools)
+```
+## 3. Counting users of each tool
+<p>Now that we've split apart all of the tools used by each respondent, we can figure out which tools are the most popular.</p>
+
+```{r}
+# Creating a new data frame
+tool_count <- tools
+
+# Grouping the data by work_tools, calculate the number of responses in each group
+tool_count <- tool_count  %>% 
+    group_by(work_tools)  %>% 
+     count(work_tools, sort=T)
+
+
+# Printing the first few results
+head(tool_count)
+```
+## 4. Plotting the most popular tools
+<p>Let's see how your favorite tools stack up against the rest. </p>
+
+```{r}
+# Creating a bar chart of the work_tools column. 
+
+ggplot(data=subset(tool_count,!is.na(work_tools)), aes(x = reorder(work_tools,n), y= n)) + 
+    geom_bar(stat = "identity", fill="#5F9EA0") +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+    labs(x= "Tools", y = "Count")
+
+```
+
+## 5. The R vs Python debate
+<p>Within the field of data science, there is a lot of debate among professionals about whether R or Python should reign supreme. You can see from our last figure that R and Python are the two most commonly used languages, but it's possible that many respondents use both R and Python. Let's take a look at how many people use R, Python, and both tools.</p>
+
+```{r}
+# Creating a new data frame called debate_tools
+debate_tools <- responses
+
+# Creating a new column called language preference, based on the conditions specified in the Instructions
+debate_tools <- debate_tools  %>% 
+   mutate(language_preference = case_when(
+       grepl("R,",WorkToolsSelect) == T & grepl("Python",WorkToolsSelect) == T ~ "both",
+       grepl("R,",WorkToolsSelect) == T ~ "R",
+       grepl("Python",WorkToolsSelect) == T ~ "Python",
+       TRUE ~ "neither"
+       )
+          )
+
+ head(debate_tools)
+     
+``` 
+
+## 6. Plotting R vs Python users
+<p>Now we just need to take a closer look at how many respondents use R, Python, and both!</p>
+
+```{r}
+# Creating a new data frame
+debate_plot <- debate_tools
+
+# Grouping by language preference and calculate number of responses
+debate_plot <- debate_plot  %>% 
+    count(language_preference, sort=T)  %>% 
+
+# Removing the row for users of "neither"
+    filter(language_preference != "neither") 
+
+# Creating a bar chart
+ggplot(debate_plot, aes(x = reorder(language_preference,n), y=n)) +
+geom_bar(stat="identity",fill="#5F9EA0") +
+labs(x = "language preference", y = "count")
+```
+## 7. Language recommendations
+<p>It looks like the largest group of professionals program in both Python and R. But what happens when they are asked which language they recommend to new learners? Do R lovers always recommend R? </p>
+
+```{r}
+# Creating a new data frame
+recommendations <- debate_tools
+
+# Grouping by language_preference and then LanguageRecommendationSelect
+recommendations <- recommendations  %>% 
+    group_by(language_preference,LanguageRecommendationSelect)  %>% 
+    summarise( count = n()) %>%
+    arrange(desc(count)) %>%
+    filter (LanguageRecommendationSelect != "NA") %>%
+    mutate( l_rank = row_number(language_preference)) %>%
+    filter(l_rank <= 4) %>%
+    arrange(language_preference)
+
+head(recommendations)
+```
+## 8. The most recommended language by the language used
+<p>Just one thing left. Let's graphically determine which languages are most recommended based on the language that a person uses.</p>
+
+```{r}
+# Creating a faceted bar plot
+ggplot(recommendations, aes(x = reorder(LanguageRecommendationSelect,count), y = count)) +
+geom_bar(stat = "identity", fill="#5F9EA0") +
+facet_wrap(~language_preference) +
+labs(x = "Language Recommendation")
+```
+
+## 9. The moral of the story
+<p>So we've made it to the end. We've found that Python is the most popular language used among Kaggle data scientists, but R users aren't far behind. And while Python users may highly recommend that new learners learn Python, R users still like to use R. 

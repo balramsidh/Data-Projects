@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1518894768780.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1685703487",
+    "id" : "DB4C36A5",
+    "lastKnownWriteTime" : 1520659111,
+    "last_content_update" : 1520659111,
+    "path" : "~/Desktop/Learnings/Data Camp/Intro to Tidyverse/Tidyverse.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "399,24",
+        "scrollLine" : "383",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

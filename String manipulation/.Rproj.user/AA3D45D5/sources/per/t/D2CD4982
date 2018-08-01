@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1520408463656.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2313371745",
+    "id" : "D2CD4982",
+    "lastKnownWriteTime" : 1520494639,
+    "last_content_update" : 1520494639273,
+    "path" : "~/Desktop/Learnings/Data Camp/String manipulation/advance matching.R",
+    "project_path" : "advance matching.R",
+    "properties" : {
+        "cursorPosition" : "107,91",
+        "scrollLine" : "88",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
